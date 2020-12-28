@@ -87,10 +87,9 @@ instance foldableIdentity :: Foldable Identity where
   foldMap f (Identity x) = f x
 
 instance foldable1Identity :: Foldable1 Identity where
-  fold1 (Identity x) = x
-  foldMap1 f (Identity x) = f x
   foldl1 _ (Identity x) = x
   foldr1 _ (Identity x) = x
+  foldMap1 f (Identity x) = f x
 
 instance foldableWithIndexIdentity :: FoldableWithIndex Unit Identity where
   foldrWithIndex f z (Identity x) = f unit x z
